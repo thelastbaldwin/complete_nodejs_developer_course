@@ -16,14 +16,17 @@ const forecast = (lat, long, callback) => {
                 daily: {
                     data: [
                         {
-                            summary
+                            summary,
+                            temperatureHigh,
+                            temperatureLow,
                         }
                     ]
                 }
             } = body;
 
             // callback(undefined, {summary, temperature, precipProbability});
-            callback(undefined, `${summary} It is currently ${temperature} degrees out. There is a ${precipProbability * 100} chance of rain.`);
+            callback(undefined, `${summary} It is currently ${temperature} degrees out. There is a ${precipProbability * 100} chance of rain.
+            The high is ${temperatureHigh} and the low is ${temperatureLow}.`);
         }
     });
 }
